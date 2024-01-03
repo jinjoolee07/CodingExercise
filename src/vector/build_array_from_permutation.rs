@@ -1,12 +1,16 @@
 pub struct Solution;
 
 impl Solution {
-    pub fn build_array(nums: Vec<i32>) -> Vec<i32> {
+    #[must_use]
+    #[allow(clippy::needless_pass_by_value)]
+
+    pub fn build_array(nums: &[i32]) -> Vec<i32> {
         let mut ans = vec![0; nums.len()];
 
         for i in 0..nums.len() {
-            let index = nums[i] as usize;
-            ans[i] = nums[index]
+            #[allow(clippy::cast_sign_loss)]
+            let index = if nums[i] >= 0 { nums[i] as usize } else { 0 };
+            ans[i] = nums[index];
         }
         ans
     }

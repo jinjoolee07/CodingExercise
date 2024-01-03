@@ -1,15 +1,16 @@
 pub struct Solution;
 
 impl Solution {
-    pub fn get_concatenation(nums: Vec<i32>) -> Vec<i32> {
-        //create a new array to store results
+    #[must_use]
+    #[allow(clippy::must_use_candidate)]
+    pub fn get_concatenation(nums: &[i32]) -> Vec<i32> {
         let mut result = Vec::new();
 
-        for &num in &nums {
+        for &num in nums {
             result.push(num);
         }
 
-        for &num in &nums {
+        for &num in nums {
             result.push(num);
         }
 

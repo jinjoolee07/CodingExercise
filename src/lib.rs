@@ -1,2 +1,3 @@
-pub mod sumOfInteger;
+pub mod numbers;
+pub mod sum;
 pub mod vector;
