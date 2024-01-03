@@ -1,3 +1,5 @@
+pub struct Solution;
+
 impl Solution {
     pub fn running_sum(nums: Vec<i32>) -> Vec<i32> {
         //create new vector
@@ -12,7 +14,6 @@ impl Solution {
                 running_sum[i - 1] + nums[i]
             };
         }
-
         running_sum
     }
 }
