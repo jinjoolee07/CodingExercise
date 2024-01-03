@@ -1,4 +1,4 @@
-use coding_exercise::sumOfInteger::sum_of_integer::Solution;
+use coding_exercise::sum::sum_of_integer::Solution;
 
 fn main() {
     let num1 = 12;
