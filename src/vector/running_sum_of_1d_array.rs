@@ -1,9 +1,7 @@
 pub struct Solution;
 
-#[allow(clippy::needless_pass_by_value)]
 impl Solution {
     #[must_use]
-    #[allow(clippy::must_use_candidate)]
     pub fn running_sum(nums: &[i32]) -> Vec<i32> {
         let mut running_sum = vec![0; nums.len()];
 
