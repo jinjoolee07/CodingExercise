@@ -2,7 +2,6 @@ pub struct Solution;
 
 impl Solution {
     #[must_use]
-    #[allow(clippy::must_use_candidate)]
     pub fn maximum_wealth(accounts: &[Vec<i32>]) -> i32 {
         let mut maximum_wealth = i32::MIN;
 
