@@ -8,9 +8,6 @@ impl Solution {
 
         for &candy in candies {
             max = std::cmp::max(max, candy);
-        }
-
-        for &candy in candies {
             ans.push(candy + extra_candies >= max);
         }
         ans
