@@ -3,22 +3,31 @@ pub struct Solution;
 impl Solution {
     #[must_use]
     pub fn count_matches(items: &[Vec<String>], rule_key: &str, rule_value: &str) -> i32 {
-        i32::try_from(
-            items
-                .iter()
-                .filter(|item| {
-                    let (item_type, item_color, item_name) =
-                        (item[0].as_str(), item[1].as_str(), item[2].as_str());
+        let mut count = 0;
 
-                    match rule_key {
-                        "type" => item_type == rule_value,
-                        "color" => item_color == rule_value,
-                        "name" => item_name == rule_value,
-                        _ => false,
+        for item in items {
+            match rule_key {
+                "type" => {
+                    if item[0] == rule_value {
+                        count += 1;
                     }
-                })
-                .count(),
-        )
-        .unwrap_or_default()
+                }
+
+                "color" => {
+                    if item[1] == rule_value {
+                        count += 1;
+                    }
+                }
+
+                "name" => {
+                    if item[2] == rule_value {
+                        count += 1;
+                    }
+                }
+
+                _ => {}
+            }
+        }
+        count
     }
 }
