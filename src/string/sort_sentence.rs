@@ -5,12 +5,14 @@ impl Solution {
     pub fn sort_sentence(s: &str) -> String {
         let mut words: Vec<&str> = s.split_whitespace().collect();
 
-        words.sort_by_key(|word| word.chars().last().unwrap_or_default());
+        words.sort_by_key(|word| word.chars().last().unwrap_or('O'));
 
-        words
+        let reconstructed_sentence: String = words
             .into_iter()
             .map(|word| &word[..word.len() - 1])
             .collect::<Vec<&str>>()
-            .join(" ")
+            .join(" ");
+
+        reconstructed_sentence
     }
 }
