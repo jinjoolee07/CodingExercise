@@ -15,9 +15,9 @@ fn main() {
         ],
     ];
 
-    let rule_key = "color".to_string();
-    let rule_value = "silver".to_string();
+    let rule_key = "color";
+    let rule_value = "silver";
 
-    let result = Solution::count_matches(&items, &rule_key, &rule_value);
-    println!("Output: {}", result);
+    let result = Solution::count_matches(&items, rule_key, rule_value);
+    println!("{:?}", result);
 }
