@@ -6,6 +6,6 @@ fn main() {
         "i think so too",
         "this is great thanks very much",
     ];
-    let result = Solution::most_words_found(sentences);
+    let result = Solution::most_words_found(&sentences);
     println!("{:?}", result)
 }
