@@ -9,9 +9,7 @@ impl Solution {
             match operation {
                 "++X" | "X++" => x += 1,
                 "--X" | "X--" => x -= 1,
-                _ => {
-                    println!("Invalid operation: {operation}");
-                }
+                _ => {}
             }
         }
         x
