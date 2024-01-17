@@ -14,11 +14,9 @@ impl Solution {
             }
         }
 
-        let result: String = message
+        message
             .chars()
-            .map(|ch| map.get(&ch).copied().unwrap_or(ch))
-            .collect();
-
-        result
+            .map(|ch| *map.get(&ch).unwrap_or(&ch))
+            .collect()
     }
 }
