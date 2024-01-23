@@ -12,14 +12,16 @@ impl Solution {
         let mut digits: Vec<_> = num_str.chars().collect();
         digits.sort_unstable();
 
-        let (new1, new2): (String, String) =
-            digits
-                .chunks(2)
-                .fold((String::new(), String::new()), |(mut a1, mut a2), chunk| {
-                    a1.push(chunk[0]);
-                    a2.push(chunk.get(1).copied().unwrap_or('0'));
-                    (a1, a2)
-                });
+        let (new1, new2): (String, String) = digits.chunks(2).try_fold(
+            (String::new(), String::new()),
+            |(mut a1, mut a2), chunk| {
+                a1.push(chunk[0]);
+                // Return an error if None is encountered during chunk processing
+                let c = chunk.get(1).copied().ok_or("Out of bounds")?;
+                a2.push(c);
+                Ok((a1, a2))
+            },
+        )?;
 
         let result_one = new1
             .parse::<i32>()
