@@ -17,11 +17,18 @@ impl Solution {
         let (new1, new2): (String, String) = digits.chunks(2).try_fold(
             (String::new(), String::new()),
             |(mut a1, mut a2), chunk| {
-                a1.push(chunk[0]);
-                let Some(&c) = chunk.get(1) else {
+                if let Some(&c) = chunk.first() {
+                    a1.push(c);
+                } else {
                     return Err("Out of bounds");
-                };
-                a2.push(c);
+                }
+
+                if let Some(&c) = chunk.get(1) {
+                    a2.push(c);
+                } else {
+                    return Err("Out of bounds");
+                }
+
                 Ok((a1, a2))
             },
         )?;
