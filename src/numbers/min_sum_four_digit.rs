@@ -17,7 +17,7 @@ impl Solution {
         let (new1, new2): (String, String) = digits.chunks(2).try_fold(
             (String::new(), String::new()),
             |(mut a1, mut a2), chunk| {
-                a1.push(chunk[0]);
+                a1.push(*chunk.first().expect("Chunk should not be empty"));
                 let Some(&c) = chunk.get(1) else {
                     return Err("Out of bounds");
                 };
