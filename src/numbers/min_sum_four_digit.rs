@@ -26,12 +26,14 @@ impl Solution {
             },
         )?;
 
-        let result_one = new1
-            .parse::<i32>()
-            .expect("Parsed result_first should be a valid integer");
+        let result_one = new1.parse::<i32>().expect(
+            "Parsed result_first should be a valid integer because it represents the first part of a four-digit number obtained by sorting the input digits.
+            The sorting ensures that the digits form a valid number.",
+        );
         let result_two = new2
             .parse::<i32>()
-            .expect("Parsed result_second should be a valid integer");
+            .expect("Parsed result_second should be a valid integer because it represents the second part of a four-digit number obtained by sorting the input digits.
+            The sorting ensures that the digits form a valid number.");
 
         Ok(result_one + result_two)
     }
