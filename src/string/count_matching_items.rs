@@ -16,6 +16,6 @@ impl Solution {
                 })
                 .count(),
         )
-        .expect("Conversion from usize to i32 should always succeed in count_matches function")
+        .expect("usize count of matches should be less than or equal to i32 max; conversion is expected to be safe")
     }
 }
