@@ -7,6 +7,6 @@ impl Solution {
             .iter()
             .map(|sentence| sentence.split_whitespace().count())
             .max()
-            .unwrap_or(0)
+            .unwrap_or_default()
     }
 }

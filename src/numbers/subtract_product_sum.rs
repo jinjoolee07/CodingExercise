@@ -11,9 +11,9 @@ impl Solution {
             .map(|c| {
                 i32::try_from(
                     c.to_digit(10)
-                        .expect("Conversion from char to digit failed"),
+                        .expect("Digit should be present while converting char to digit"),
                 )
-                .expect("Conversion from digit to i32 failed")
+                .expect("Valid i32 should be obtained while converting digit to i32")
             })
             .fold((1, 0), |(prod, s), digit| (prod * digit, s + digit));
 
