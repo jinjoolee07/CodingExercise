@@ -15,9 +15,7 @@ impl Solution {
 
         words
             .iter()
-            // Remove the trailing number
             .map(|word| {
-                // Safety: Each word is guaranteed to have at least one character
                 word.get(..word.len() - 1)
                     .expect("Unexpected empty word during slicing")
             })
