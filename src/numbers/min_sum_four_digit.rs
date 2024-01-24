@@ -18,11 +18,10 @@ impl Solution {
             (String::new(), String::new()),
             |(mut a1, mut a2), chunk| {
                 a1.push(chunk[0]);
-                if let Some(&c) = chunk.get(1) {
-                    a2.push(c);
-                } else {
+                let Some(&c) = chunk.get(1) else {
                     return Err("Out of bounds");
-                }
+                };
+                a2.push(c);
                 Ok((a1, a2))
             },
         )?;
