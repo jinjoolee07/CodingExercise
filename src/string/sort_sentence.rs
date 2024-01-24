@@ -7,7 +7,7 @@ impl Solution {
     pub fn sort_sentence(s: &str) -> String {
         let mut words: Vec<&str> = s.split_whitespace().collect();
 
-        words.sort_by_key(|word| {
+        words.sort_unstable_by_key(|word| {
             word.chars()
                 .last()
                 .expect("Each word should have at least one character.")
